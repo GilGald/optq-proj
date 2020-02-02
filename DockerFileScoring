@@ -1,0 +1,8 @@
+FROM python:3
+
+COPY ./scoring_server/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./scoring_server .
+
+CMD  ./run_flask.sh
